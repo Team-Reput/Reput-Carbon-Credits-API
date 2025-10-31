@@ -20,11 +20,24 @@ const userExists = async (email) => {
 };
 
 
-const signupfunc = async(email) =>{
+const signupfunc = async(auditorName,
+      designation,
+      userName,
+      password,
+      userType,
+      carbonCreditsUser,
+      orgType,
+      firstName,
+      lastName,
+      phoneNo,
+      country,
+      idProof,
+      taxId,
+      authSignId) =>{
    const client = await getConnection();
    const result = await client.query(
-  'SELECT * FROM dbo.signup_user($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 )',[
-   auditorName,
+  'SELECT * FROM dbo.signup_user($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11 ,$12 ,$13 ,$14 )',[
+     auditorName,
       designation,
       userName,
       password,

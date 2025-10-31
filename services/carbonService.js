@@ -1,14 +1,7 @@
-import { validationResult } from 'express-validator';
-import { generateToken } from '../services/authService.js';
-import {buyerData } from '../services/carbonService.js';
-import logger from '../utils/logger.js';
+import { getConnection } from '../config/db.js';
 
 
-
-
-
-const InsertBuyerData = async (req, res) => {
-  const { 
+const buyerData = async(
     userId,
     projectName,
     projectDescription,
@@ -32,13 +25,16 @@ const InsertBuyerData = async (req, res) => {
     certificationValidUntil,
     question,
     answers
-   } = req.body;
+      
 
-   console.log("request body",req.body);
 
-   try {
 
-    const user = await buyerData(userId,
+
+) =>{
+   const client = await getConnection();
+   const result = await client.query(
+  'SELECT * FROM dbo.fn_insert_project_buyer_data($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11 ,$12 ,$13 ,$14 ,$15 ,$16 ,$17 ,$18 ,$19 ,$20 ,$21 ,$22 ,$23 )',[
+     userId,
     projectName,
     projectDescription,
     projectImage,
@@ -60,18 +56,16 @@ const InsertBuyerData = async (req, res) => {
     sdgCount,
     certificationValidUntil,
     question,
-    answers); 
+    answers
+      
+  ]
+);
 
-    console.log("user" , user);
-    
+  return result.rows[0];
 
-    // const token = generateToken(user);
-    logger.info(`User logged in: ${projectName}`);
-     res.status(201).json({ user });
-  } catch (error) {
-    logger.error(`Error in login: ${error.message}`);
-    res.status(500).json({ message: 'Server error' });
-  }
-};
+}
 
-export { InsertBuyerData };
+
+
+
+export { buyerData };

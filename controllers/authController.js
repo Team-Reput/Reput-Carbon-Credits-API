@@ -58,12 +58,8 @@ const signup = async (req, res) => {
    } = req.body;
 
    console.log("request body",req.body);
-   
 
-  try {
-    // if (!(await userExists(email))) {
-    //   return res.status(400).json({ message: 'Invalid credentials' });
-    // }
+   try {
 
     const user = await signupfunc(auditorName,designation,userName,password,userType,carbonCreditsUser,orgType,firstName, lastName,phoneNo,country,idProof,taxId,authSignId); 
 
@@ -71,9 +67,8 @@ const signup = async (req, res) => {
     
 
     // const token = generateToken(user);
-    logger.info(`User logged in: ${email}`);
-    res.json({ token });
-     res.status(201).json({ token, user });
+    logger.info(`User logged in: ${userName}`);
+     res.status(201).json({ user });
   } catch (error) {
     logger.error(`Error in login: ${error.message}`);
     res.status(500).json({ message: 'Server error' });

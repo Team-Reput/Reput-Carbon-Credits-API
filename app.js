@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes.js';
 import healthRoutes from './routes/healthRoutes.js';
 import errorMiddleware from './middlewares/errorMiddleware.js';
 import helmet from 'helmet';
+import carbonRoutes from './routes/carbonRoutes.js';
 
 
 const app = express();
@@ -20,6 +21,8 @@ app.use(helmet());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/health', healthRoutes); 
+
+app.use('/api/carbon', carbonRoutes);
 
 
 

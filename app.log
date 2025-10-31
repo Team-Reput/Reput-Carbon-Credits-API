@@ -1,1 +1,13 @@
 [2025-10-31T10:10:32.633Z] [31merror[39m: Error in login: email is not defined
+[2025-10-31T10:36:01.844Z] [31merror[39m: Error in login: data is not defined
+[2025-10-31T10:36:44.591Z] [31merror[39m: Error in login: auditorName is not defined
+[2025-10-31T10:39:30.937Z] [31merror[39m: Error in login: auditorName is not defined
+[2025-10-31T10:42:54.120Z] [31merror[39m: Error in login: designation is not defined
+[2025-10-31T10:43:24.252Z] [31merror[39m: Error in login: email is not defined
+[2025-10-31T10:43:38.545Z] [31merror[39m: Error in login: email is not defined
+[2025-10-31T10:48:05.099Z] [32minfo[39m: User logged in: soniii@test.com
+[2025-10-31T10:48:05.106Z] [31merror[39m: Error in login: token is not defined
+[2025-10-31T10:50:18.671Z] [32minfo[39m: User logged in: soniii@test.com
+[2025-10-31T10:50:32.570Z] [32minfo[39m: User logged in: aaaaaa@test.com
+[2025-10-31T11:15:36.468Z] [31merror[39m: Error in login: function dbo.fn_insert_project_buyer_data(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+[2025-10-31T11:20:13.287Z] [31merror[39m: Error in login: function dbo.fn_insert_project_buyer_data(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
